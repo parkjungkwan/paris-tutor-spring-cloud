@@ -1,0 +1,23 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: demo-service
+  profiles: 
+    active: local
+
+demo:
+  message: Hello from local profile
+
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: prod
+
+demo:
+  message: ${message:Hello from default prod profile}
+
+
